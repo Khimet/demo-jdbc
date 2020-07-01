@@ -26,7 +26,9 @@ public class TestConnexionJdbc {
 		/* Etape 1 récupération du fichier de configuration contenant les informations
 		 * de connexions à la base de données compta
 		 */
-		ResourceBundle fichierConfig = ResourceBundle.getBundle("database");
+//		ResourceBundle fichierConfig = ResourceBundle.getBundle("database");
+		
+		ResourceBundle fichierConfig = ResourceBundle.getBundle("database2");
 		
 		String driverName = fichierConfig.getString("database.driver");
 		
@@ -49,7 +51,7 @@ public class TestConnexionJdbc {
 			statement = connexionBaseCompta.createStatement();
 			
 			// Test d'une requête
-			resultSet = statement.executeQuery("select * from article");
+			resultSet = statement.executeQuery("select * from ARTICLE");
 			
 			// Affichage des résultats
 			while(resultSet.next()) {
